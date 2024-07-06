@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="timer.css">
+</head>
+<body>
+    <div class="main">
+        <!-- <img src="https://th.bing.com/th/id/OIP.4lhy5h1O8aDEM_FwNTYiWwAAAA?w=244&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt=""> -->
+        <div class="overlay">
+            <h2 class="title">We are coming Soon</h2>
+            <p class="title" id="end_Date">5 JULY 2024 12:00 AM</p>
+            <div class="time">
+                <div class="times">
+                    <input type="text" readonly value="0">
+                    <label for="">Days</label>
+                </div>
+                <div class="times">
+                    <input type="text" readonly value="0">
+                    <label for="">Hours</label>
+                </div>
+                <div class="times">
+                    <input type="text" readonly value="0">
+                    <label for="">Mintues</label>
+                </div>
+                <div class="times">
+                    <input type="text" readonly value="0">
+                    <label for="">Seconds</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+<script>
+    const endDate = "5 JULY 2024  12:00 AM"
+    const inputs = document.querySelectorAll("input")
+    document.querySelector('#end_Date').innerHTML = endDate;
+    function clock(){
+        const end = new Date(endDate);
+        const now = new Date();
+        const diff = (end - now )/1000;
+        if(diff < 0)
+        return;
+        // time into miliseconds 
+        console.log(diff);
+         // convert into days 
+        inputs[0].value = (Math.floor(diff /86400));
+        // convert into hours
+        inputs[1].value = (Math.floor(diff /3600) % 24);
+        //convert into mintues
+        inputs[2].value = (Math.floor(diff /60 ) % 60);
+        // convert into seconds
+        inputs[3].value = (Math.floor(diff ) % 60 );
+       
+    }
+    // intial call
+    clock();
+   setInterval(() => {
+    clock()
+    
+   }, 1000);
+
+    // 1 day = 24hr
+    // 1hr = 60min = 3600sec
+    // 1min = 60 sec;
+
+
+
+
+
+
+</script>
+</html>
