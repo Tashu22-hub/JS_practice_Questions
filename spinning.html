@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>spin Wheel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Playpen Sans";
+        background-color: rgb(23, 60, 83);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: 100vh;
+      }
+      .Container {
+        width: 500px;
+        height: 500px;
+        background-color: #ccc;
+        border-radius: 50%;
+        border: 15px solid white;
+        overflow: hidden;
+        position: relative;
+        transition: 5s;
+      }
+      .Container div {
+        height: 50%;
+        width: 200px;
+        position: absolute;
+        transform: translateX(-50%);
+        transform-origin: bottom;
+        clip-path: polygon(100% 0, 0 0, 50% 100%);
+        text-align: center;
+        display: flex;
+        /* align-items:center; */
+        padding-top: 20px;
+        /* padding-right: 20px; */
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        left: 135px;
+      }
+      .Container .One {
+        background-color: #50e250;
+        left: 50%;
+        /* transform: rotate(360deg); */
+      }
+      .Container .Two {
+        background-color: #b450e2;
+        transform: rotate(36deg);
+      }
+      .Container .Three {
+        background-color: #cae250;
+        transform: rotate(72deg);
+      }
+      .Container .Four {
+        background-color: #5a50e2;
+        transform: rotate(108deg);
+      }
+      .Container .Five {
+        background-color: #e28f50;
+        transform: rotate(144deg);
+      }
+      .Container .Six {
+        background-color: #e2508f;
+        transform: rotate(180deg);
+      }
+      .Container .Seven {
+        background-color: #db50e2;
+        transform: rotate(216deg);
+      }
+      .Container .Eight {
+        background-color: #7250e2;
+        transform: rotate(252deg);
+      }
+      .Container .Nine {
+        background-color: #50b1e2;
+        transform: rotate(288deg);
+      }
+      .Container .Ten {
+        background-color: #92e549;
+        transform: rotate(324deg);
+      }
+      .arrow {
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #dacccc;
+      }
+      .arrow::before {
+        content: "\1F817";
+        font-size: 100px;
+      }
+      #Spin {
+        position: absolute;
+        z-index: 1;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        font-family: "Playpen Sans";
+        font-weight: 600;
+        border: 5px solid white;
+      }
+      #Spin:focus{
+        background-color: rgb(67, 40, 12);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="Spin">Spinner</button>
+    <div class="arrow"></div>
+    <div class="Container">
+      <div class="One">10 $</div>
+      <div class="Two">20 $</div>
+      <div class="Three">30 $</div>
+      <div class="Four">40 $</div>
+      <div class="Five">50 $</div>
+      <div class="Six">60 $</div>
+      <div class="Seven">70 $</div>
+      <div class="Eight">80 $</div>
+      <div class="Nine">90 $</div>
+      <div class="Ten">100 $</div>
+    </div>
+  </body>
+  <script>
+    const Spinbtn = document.querySelector("#Spin");
+    const Container = document.querySelector(".Container");
+    Spinbtn.addEventListener("click", spin);
+    let value = Math.ceil(Math.random() * 3600);
+    function spin() {
+      Container.style.transform = "rotate(" + value + "deg)";
+      value += Math.ceil(Math.random() * 3600);
+    }
+  </script>
+</html>
