@@ -1,0 +1,23 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+} */
+#banner{
+    font-size: 18px;
+    
+    margin-left: 10px;
+}
+#time{
+    width: 140px;
+    background: orange;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    align-content: center;
+
+}
+.clock{
+    margin-left: 500px;
+    margin-top: 300px;
+}
