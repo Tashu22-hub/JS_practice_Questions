@@ -1,0 +1,25 @@
+
+.container {
+    text-align: center;
+    line-height: 30px;
+    padding-top: 40px;
+}
+button{
+    padding: 5px 20px ;
+    font-size: 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    
+    
+
+}
+button:hover{
+    background: black;
+    color: aliceblue;
+
+}
+p input{
+    outline: none;
+    border-radius: 5px;
+}
